@@ -1,40 +1,40 @@
 import requests
 import os
 
-session = requests.session()
+xiaoaishe_session = requests.session()
 #获取token
-url = 'https://xiaoaishe.com/wp-json/b2/v1/getRecaptcha'
-data = {'number': '4','width': '186','height': '50'}
-token = session.post(url = url,data=data).json()['token']
+xiaoaishe_url = 'https://xiaoaishe.com/wp-json/b2/v1/getRecaptcha'
+xiaoaishe_data = {'number': '4','width': '186','height': '50'}
+xiaoaishe_token = xiaoaishe_session.post(url = xiaoaishe_url,data=xiaoaishe_data).json()['token']
 #print(token)
 #登录
-url = 'https://xiaoaishe.com/wp-json/jwt-auth/v1/token'
-data = {'username': os.environ['xiaoaishe_username'],'password': os.environ['xiaoaishe_password'],'token': token}
-login_cookies = session.post(url = url,data=data).cookies.get_dict()
+xiaoaishe_url = 'https://xiaoaishe.com/wp-json/jwt-auth/v1/token'
+xiaoaishe_data = {'username': os.environ['xiaoaishe_username'],'password': os.environ['xiaoaishe_password'],'token': xiaoaishe_token}
+xiaoaishe_login_cookies = xiaoaishe_session.post(url = xiaoaishe_url,data=xiaoaishe_data).cookies.get_dict()
 #签到
-url = 'https://xiaoaishe.com/wp-json/b2/v1/userMission'
+xiaoaishe_url = 'https://xiaoaishe.com/wp-json/b2/v1/userMission'
 #cookies = dict(b2_back_url='https://xiaoaishe.com/vips',b2_token=b2_token,PHPSESSID=PHPSESSID)
 #requests.utils.add_dict_to_cookiejar(session.cookies, login_cookies)
-data = {}
-headers = {'authorization': 'Bearer '+login_cookies['b2_token']}
-jg = session.post(url=url, data=data, headers=headers)
-print(jg.text)
+xiaoaishe_data = {}
+xiaoaishe_headers = {'authorization': 'Bearer '+xiaoaishe_login_cookies['b2_token']}
+xiaoaishe_res = xiaoaishe_session.post(url=xiaoaishe_url, data=xiaoaishe_data, headers=xiaoaishe_headers)
+print(xiaoaishe_res.text)
 
-session = requests.session()
+maozhua_session = requests.session()
 #登录
-url = 'https://maozhua.org/wp-json/jwt-auth/v1/token'
-data = {'username': os.environ['maozhua_username'],'password': os.environ['maozhua_password']}
-login_cookies = session.post(url = url,data=data).cookies.get_dict()
+maozhua_url = 'https://maozhua.org/wp-json/jwt-auth/v1/token'
+maozhua_data = {'username': os.environ['maozhua_username'],'password': os.environ['maozhua_password']}
+maozhua_login_cookies = maozhua_session.post(url = maozhua_url,data=maozhua_data).cookies.get_dict()
 #print(login_cookies)
 #获取PHPSESSID
-url = 'https://maozhua.org/wp-json/b2/v1/tjuser'
-data = {}
-headers = {'authorization': 'Bearer '+login_cookies['b2_token']}
-cookies = session.post(url = url,data=data, headers=headers).cookies.get_dict()
+maozhua_url = 'https://maozhua.org/wp-json/b2/v1/tjuser'
+maozhua_data = {}
+maozhua_headers = {'authorization': 'Bearer '+maozhua_login_cookies['b2_token']}
+maozhua_cookies = maozhua_session.post(url = maozhua_url,data=maozhua_data, headers=maozhua_headers).cookies.get_dict()
 #print(cookies['PHPSESSID'])
 #maozhua签到
-url = 'https://maozhua.org/wp-json/b2/v1/userMission'
-data = {}
-headers = {'authorization': 'Bearer '+b2_token}
-jg = session.post(url=url, data=data, headers=headers)
-print(jg.text)
+maozhua_url = 'https://maozhua.org/wp-json/b2/v1/userMission'
+maozhua_data = {}
+maozhua_headers = {'authorization': 'Bearer '+maozhua_login_cookies['b2_token']}
+maozhua_res = maozhua_session.post(url=maozhua_url, data=maozhua_data, headers=maozhua_headers)
+print(maozhua_res.text)
