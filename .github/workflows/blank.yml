@@ -1,0 +1,26 @@
+name: selenium
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        
+      - name: 'Install requirements'
+        run: pip install -r requirements.txt
+  
+      - name: 'Working'
+        run: python sign.py
+        env:
+             xiaoaishe_username: ${{ secrets.XIAOAISHE_USERNAME }}
+             xiaoaishe_password: ${{ secrets.XIAOAISHE_PASSWORD }}
