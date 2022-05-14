@@ -1,11 +1,8 @@
 name: selenium
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '03 16 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
