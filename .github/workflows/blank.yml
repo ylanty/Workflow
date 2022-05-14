@@ -24,3 +24,5 @@ jobs:
         env:
              xiaoaishe_username: ${{ secrets.XIAOAISHE_USERNAME }}
              xiaoaishe_password: ${{ secrets.XIAOAISHE_PASSWORD }}
+             maozhua_username: ${{ secrets.MAOZHUA_USERNAME }}
+             maozhua_password: ${{ secrets.MAOZHUA_PASSWORD }}
