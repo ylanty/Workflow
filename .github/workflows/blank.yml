@@ -1,5 +1,7 @@
 name: selenium
-on: [push]
+on: 
+  schedule:
+    - cron:  '02 16 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
