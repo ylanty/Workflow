@@ -2,9 +2,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-
-driver.get('https://www.baidu.com/')
-print(driver.title)
 def xiaoaishe_sign():
     # 找到插件的路径，使用它驱动操作
     chrome_options = Options()
