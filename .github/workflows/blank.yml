@@ -1,8 +1,5 @@
 name: selenium
-on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '03 16 * * *'
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
