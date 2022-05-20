@@ -22,9 +22,9 @@ def xiaoaishe_sign(browser):
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//div[@class="bar-item bar-mission"]').click()
         time.sleep(2)
-        xiaoaishe_sign_element = browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]')
-        xiaoaishe_sign_element = .click()
-        print(xiaoaishe_sign_element.text)
+        browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
+        time.sleep(2)
+        print(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
         print("有错误:", e)
     
@@ -44,9 +44,9 @@ def maozhua_sign(browser):
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//div[@class="bar-item bar-mission"]').click()
         time.sleep(2)
-        maozhua_sign_element = browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]')
-        maozhua_sign_element.click()
-        print(maozhua_sign_element.text)
+        browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
+        time.sleep(2)
+        print(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
         print("有错误:", e)
  
