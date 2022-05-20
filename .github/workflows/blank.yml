@@ -32,3 +32,5 @@ jobs:
              xiaoaishe_password: ${{ secrets.XIAOAISHE_PASSWORD }}
              maozhua_username: ${{ secrets.MAOZHUA_USERNAME }}
              maozhua_password: ${{ secrets.MAOZHUA_PASSWORD }}
+             sdai_username: ${{ secrets.SDAI_USERNAME }}
+             sdai_password: ${{ secrets.SDAI_PASSWORD }}
