@@ -3,7 +3,6 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.action_chains import ActionChains
 
 def xiaoaishe_sign(browser):
     try:
@@ -63,11 +62,15 @@ def sdai_sign(browser):
         browser.find_element(By.XPATH,'//input[@id="wp-submit"]').click()
         time.sleep(2)
         # 找到签到按钮的xpath，模拟签到
-        browser.find_element(By.XPATH,'//a[@class="poi-tooltip is-bottom inn-nav__point-sign-daily__btn"]').click()
+        try:
+            browser.find_element(By.XPATH,'//a[@class="poi-tooltip is-bottom inn-nav__point-sign-daily__btn"]').click()
+            time.sleep(2)
+        except Exception as e:
+            print("有错误:", e)
+        
+        browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]').click()
         time.sleep(2)
-        ActionChains(browser).move_to_element(browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]')).perform()
-        time.sleep(2)
-        print(browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]/div/div/div[@class="inn-user-menu__nav__portal"]').text)
+        print(browser.find_element(By.XPATH,'//fieldset/div[4]').text)
     except Exception as e:
         print("有错误:", e)
     
