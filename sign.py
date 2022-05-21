@@ -3,6 +3,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
 
 def xiaoaishe_sign(browser):
     try:
@@ -63,6 +64,10 @@ def sdai_sign(browser):
         time.sleep(2)
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//a[@class="poi-tooltip is-bottom inn-nav__point-sign-daily__btn"]').click()
+        time.sleep(2)
+        ActionChains(browser).move_to_element(browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]')).perform()
+        time.sleep(2)
+        print(browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]/div/div/div[@class="inn-user-menu__nav__portal"]').text)
     except Exception as e:
         print("有错误:", e)
     
@@ -70,6 +75,7 @@ if __name__ == '__main__':
     # 找到插件的路径，使用它驱动操作
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('ignore-certificate-errors')
     browser = webdriver.Chrome(options=chrome_options)
     xiaoaishe_sign(browser)
     maozhua_sign(browser)
