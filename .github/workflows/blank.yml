@@ -1,6 +1,6 @@
 name: selenium
 on: 
-  push:
+  #push:
   schedule:
     - cron:  '02 00 * * *'
 jobs:
