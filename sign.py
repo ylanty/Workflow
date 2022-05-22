@@ -25,7 +25,7 @@ def xiaoaishe_sign(browser):
         time.sleep(2)
         browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
         time.sleep(2)
-        daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
+        func.daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
         print("xiaoaishe有错误:", e)
     
@@ -47,7 +47,7 @@ def maozhua_sign(browser):
         time.sleep(2)
         browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
         time.sleep(2)
-        daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
+        func.daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
         print("maozhua有错误:", e)
  
@@ -72,7 +72,7 @@ def sdai_sign(browser):
         time.sleep(2)
         browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]').click()
         time.sleep(2)
-        daylylog(browser.find_element(By.XPATH,'//fieldset/div[4]').text)
+        func.daylylog(browser.find_element(By.XPATH,'//fieldset/div[4]').text)
     except Exception as e:
         print("sdai有错误:", e)
     
