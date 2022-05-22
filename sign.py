@@ -26,7 +26,7 @@ def xiaoaishe_sign(browser):
         time.sleep(2)
         print(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
-        print("有错误:", e)
+        print("xiaoaishe有错误:", e)
     
 def maozhua_sign(browser):
     try:
@@ -48,7 +48,7 @@ def maozhua_sign(browser):
         time.sleep(2)
         print(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
     except Exception as e:
-        print("有错误:", e)
+        print("maozhua有错误:", e)
  
 def sdai_sign(browser):
     try:
@@ -66,13 +66,14 @@ def sdai_sign(browser):
             browser.find_element(By.XPATH,'//a[@class="poi-tooltip is-bottom inn-nav__point-sign-daily__btn"]').click()
             time.sleep(2)
         except Exception as e:
-            print("有错误:", e)
-        
+            print("sdai签到有错误:", e)
+        browser.get('https://www.sdai.me/')
+        time.sleep(2)
         browser.find_element(By.XPATH,'//div[@id="inn-user-menu__container"]').click()
         time.sleep(2)
         print(browser.find_element(By.XPATH,'//fieldset/div[4]').text)
     except Exception as e:
-        print("有错误:", e)
+        print("sdai有错误:", e)
     
 if __name__ == '__main__':
     # 找到插件的路径，使用它驱动操作
