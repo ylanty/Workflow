@@ -1,6 +1,7 @@
 name: selenium
 on: 
   #push:
+  workflow_dispatch:
   schedule:
     - cron:  '02 00 * * *'
 jobs:
