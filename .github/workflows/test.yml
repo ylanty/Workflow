@@ -15,6 +15,11 @@ jobs:
       - name: 'Test'
         run: python test.py
 
+      - name: Commit files
+        run: |
+          git config --local user.name ${{ github.actor }}
+          git commit -m "Add changes" -a
+          
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
