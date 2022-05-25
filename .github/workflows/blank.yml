@@ -35,3 +35,8 @@ jobs:
              maozhua_password: ${{ secrets.MAOZHUA_PASSWORD }}
              sdai_username: ${{ secrets.SDAI_USERNAME }}
              sdai_password: ${{ secrets.SDAI_PASSWORD }}
+      - name: Push changes  # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
