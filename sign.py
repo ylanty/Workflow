@@ -84,5 +84,5 @@ if __name__ == '__main__':
     browser = webdriver.Chrome(options=chrome_options)
     xiaoaishe_sign(browser)
     maozhua_sign(browser)
-    sdai_sign(browser)
+    # sdai_sign(browser)
     browser.quit()
