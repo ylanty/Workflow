@@ -8,9 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: szenius/set-timezone@v1.0
-        with:
-          timezoneLinux: "Asia/Singapore"
+      # - uses: szenius/set-timezone@v1.0
+        # with:
+          # timezoneLinux: "Asia/Singapore"
           
       - name: Checkout
         uses: actions/checkout@v2
@@ -39,14 +39,18 @@ jobs:
              maozhua_password: ${{ secrets.MAOZHUA_PASSWORD }}
              sdai_username: ${{ secrets.SDAI_USERNAME }}
              sdai_password: ${{ secrets.SDAI_PASSWORD }}
+             mysql_host: ${{ secrets.MYSQL_HOST }}
+             mysql_username: ${{ secrets.MYSQL_USERNAME }}
+             mysql_password: ${{ secrets.MYSQL_PASSWORD }}
+             mysql_database: ${{ secrets.MYSQL_DATABASE }}
 
-      - name: Commit files
-        run: |
-          git config --local user.name ${{ github.actor }}
-          git commit -m "Add changes" -a
+      # - name: Commit files
+        # run: |
+         #  git config --local user.name ${{ github.actor }}
+          # git commit -m "Add changes" -a
           
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      # - name: Push changes
+        # uses: ad-m/github-push-action@master
+        # with:
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          # branch: ${{ github.ref }}
