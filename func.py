@@ -1,5 +1,6 @@
 import pymysql
 import time
+import os
 
 def executesql(web_name,result):
     # 打开数据库连接
