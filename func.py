@@ -3,10 +3,10 @@ import time
 
 def executesql(web_name,result):
     # 打开数据库连接
-    db = pymysql.connect(host='os.environ["mysql_host"]',
-                         user='os.environ["mysql_username"]',
-                         password='os.environ["mysql_password"]',
-                         database='os.environ["mysql_database"]')
+    db = pymysql.connect(host=os.environ["mysql_host"],
+                         user=os.environ["mysql_username"],
+                         password=os.environ["mysql_password"],
+                         database=os.environ["mysql_database"])
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
     # SQL 语句
@@ -26,10 +26,10 @@ def executesql(web_name,result):
 
 def isexecuted(web_name):
     # 打开数据库连接
-    db = pymysql.connect(host='os.environ["mysql_host"]',
-                         user='os.environ["mysql_username"]',
-                         password='os.environ["mysql_password"]',
-                         database='os.environ["mysql_database"]')
+    db = pymysql.connect(host=os.environ["mysql_host"],
+                         user=os.environ["mysql_username"],
+                         password=os.environ["mysql_password"],
+                         database=os.environ["mysql_database"])
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
     # SQL 语句
