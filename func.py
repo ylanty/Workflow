@@ -11,7 +11,7 @@ def executesql(web_name,result):
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
     # SQL 语句
-    sql = "INSERT INTO `daylylog`(`web_name`, `day_time`, `result`, `sys_time`) VALUES ('%s', utc_date(), '%s',sysdate())" %(web_name,result)
+    sql = "INSERT INTO `daylylog`(`web_name`, `day_time`, `result`, `sys_time`) VALUES ('%s', date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d'), '%s',date_add(sysdate(), interval 8 hour))" %(web_name,result)
     try:
        # 执行sql语句
        cursor.execute(sql)
@@ -34,7 +34,7 @@ def isexecuted(web_name):
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
     # SQL 语句
-    sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = utc_date() " %web_name
+    sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d') " %web_name
     try:
        # 执行sql语句
        cursor.execute(sql)
