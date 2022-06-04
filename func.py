@@ -15,6 +15,7 @@ def executesql(web_name,result):
     cursor = db.cursor()
     # SQL 语句
     sql = "INSERT INTO `daylylog`(`web_name`, `day_time`, `result`, `sys_time`) VALUES ('%s', date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d'), '%s',date_add(sysdate(), interval 8 hour))" %(web_name,result)
+    print(sql)
     try:
        # 执行sql语句
        cursor.execute(sql)
@@ -35,6 +36,7 @@ def isexecuted(web_name):
     cursor = db.cursor()
     # SQL 语句
     sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d')" %web_name
+    print(sql)
     try:
        # 执行sql语句
        cursor.execute(sql)
