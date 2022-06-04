@@ -34,7 +34,7 @@ def isexecuted(web_name):
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
     # SQL 语句
-    sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d') " %web_name
+    sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%Y-%m-%d')" %web_name
     try:
        # 执行sql语句
        cursor.execute(sql)
