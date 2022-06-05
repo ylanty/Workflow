@@ -39,10 +39,11 @@ def isexecuted(web_name):
     # print(sql)
     try:
        # 执行sql语句
-       cursor.execute(sql)
+       count = cursor.execute(sql)
        # 获取所有记录列表
-       results = cursor.fetchall()
-       if len(results)>0:
+       # results = cursor.fetchall()
+       # if len(results)>0:
+       if count>0:
            return True
        else:
            return False
