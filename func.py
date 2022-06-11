@@ -9,14 +9,14 @@ def create_new_conn():
                          database=os.environ["mysql_database"])
 
 def executesql(web_name,result):
-    # 打开数据库连接
-    db = create_new_conn()
-    # 使用cursor()方法获取操作游标 
-    cursor = db.cursor()
-    # SQL 语句
-    sql = "INSERT INTO `daylylog`(`web_name`, `day_time`, `result`, `sys_time`) VALUES ('%s', date_format(date_add(sysdate(), interval 8 hour),'%%Y-%%m-%%d'), '%s',date_add(sysdate(), interval 8 hour))" %(web_name,result)
-    # print(sql)
     try:
+       # 打开数据库连接
+       db = create_new_conn()
+       # 使用cursor()方法获取操作游标 
+       cursor = db.cursor()
+       # SQL 语句
+       sql = "INSERT INTO `daylylog`(`web_name`, `day_time`, `result`, `sys_time`) VALUES ('%s', date_format(date_add(sysdate(), interval 8 hour),'%%Y-%%m-%%d'), '%s',date_add(sysdate(), interval 8 hour))" %(web_name,result)
+       # print(sql)
        # 执行sql语句
        cursor.execute(sql)
        # 执行sql语句
@@ -30,14 +30,14 @@ def executesql(web_name,result):
         db.close()
 
 def isexecuted(web_name):
-    # 打开数据库连接
-    db = create_new_conn()
-    # 使用cursor()方法获取操作游标 
-    cursor = db.cursor()
-    # SQL 语句
-    sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%%Y-%%m-%%d')" %web_name
-    # print(sql)
     try:
+       # 打开数据库连接
+       db = create_new_conn()
+       # 使用cursor()方法获取操作游标 
+       cursor = db.cursor()
+       # SQL 语句
+       sql = "SELECT * FROM `daylylog` WHERE `web_name` = '%s' and `day_time` = date_format(date_add(sysdate(), interval 8 hour),'%%Y-%%m-%%d')" %web_name
+       # print(sql)
        # 执行sql语句
        count = cursor.execute(sql)
        # 获取所有记录列表
