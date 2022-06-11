@@ -52,11 +52,12 @@ def isexecuted(web_name):
             return True
         else:
             return False
-     except:
+    except:
+        print("daylylog有错误:", e)
         # 发生错误
         print ("Error: unable to fetch data")
         return False
-     finally:
+    finally:
         if create_new_conn_succeed:
             # 关闭数据库连接
             cursor.close()
