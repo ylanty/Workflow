@@ -12,7 +12,7 @@ def xiaoaishe_sign(browser):
     try:
         # 选择需要打卡的网址，填入你的签到网页
         # browser.get('https://xiaoaishe.com/mission/today')
-        browser.get('https://xiaoai996.com/mission/today')
+        browser.get('https://xiaoai986.com/mission/today')
         time.sleep(2)
         browser.find_element(By.XPATH,'//div[@class="modal-content b2-radius"]//span[@class="close-button"]').click()
         time.sleep(2)
