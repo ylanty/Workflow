@@ -45,20 +45,20 @@ def maozhua_sign(browser):
     try:
         # 选择需要打卡的网址，填入你的签到网页
         browser.get('https://maozhua.org/mission/today')
-        time.sleep(1)
+        time.sleep(2)
         browser.find_element(By.XPATH,'//button[@class="empty mobile-hidden"]').click()
-        time.sleep(1)
+        time.sleep(2)
         # 找到邮件和密码输入框的xpath,并在对应的位置送入账号密码
         browser.find_element(By.XPATH,'//label[@class="login-form-item"]//input[@name="username"]').send_keys(os.environ["maozhua_username"])
         browser.find_element(By.XPATH,'//label[@class="login-form-item"]//input[@name="password"]').send_keys(os.environ["maozhua_password"])
         # 找到登录按钮的xpath，模拟点击
         browser.find_element(By.XPATH,'//div[@class="login-box-in"]//div[@class="login-bottom"]//button').click()
-        time.sleep(1)
+        time.sleep(2)
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//div[@class="bar-item bar-mission"]').click()
-        time.sleep(1)
+        time.sleep(2)
         browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
-        time.sleep(1)
+        time.sleep(2)
         # func.daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
         global maozhua_res
         maozhua_res = browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text
