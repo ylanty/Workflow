@@ -77,14 +77,14 @@ if __name__ == '__main__':
     chrome_options.add_argument('ignore-certificate-errors')
     browser = webdriver.Chrome(options=chrome_options)
     # 找到插件的路径，使用它驱动操作
-    if func.isexecuted('xiaoaishe') :
+    '''if func.isexecuted('xiaoaishe') :
         print('xiaoaishe已签到')
     elif xiaoaishe_sign(browser) :
         func.executesql('xiaoaishe',xiaoaishe_res)
     if func.isexecuted('maozhua') :
         print('maozhua已签到')
     elif maozhua_sign(browser) :
-        func.executesql('maozhua',maozhua_res)
-    # xiaoaishe_sign(browser)
-    # maozhua_sign(browser)
+        func.executesql('maozhua',maozhua_res)'''
+    xiaoaishe_sign(browser)
+    maozhua_sign(browser)
     browser.quit()
