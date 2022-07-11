@@ -53,7 +53,6 @@ def isexecuted(web_name):
         else:
             return False
     except:
-        print("daylylog有错误:", e)
         # 发生错误
         print ("Error: unable to fetch data")
         return False
