@@ -26,7 +26,7 @@ def xiaoaishe_sign(browser):
         time.sleep(1)
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//div[@class="bar-item bar-mission"]').click()
-        time.sleep(1)
+        time.sleep(2)
         browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
         time.sleep(1)
         # func.daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
@@ -56,7 +56,7 @@ def maozhua_sign(browser):
         time.sleep(2)
         # 找到签到按钮的xpath，模拟签到
         browser.find_element(By.XPATH,'//div[@class="bar-item bar-mission"]').click()
-        time.sleep(2)
+        time.sleep(3)
         browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').click()
         time.sleep(2)
         # func.daylylog(browser.find_element(By.XPATH,'//div[@class="bar-user-info-row bar-mission-action"]').text)
