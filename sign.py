@@ -14,8 +14,8 @@ def xiaoaishe_sign(browser):
         # browser.get('https://xiaoaishe.com/mission/today')
         browser.get('https://xiaoaise.com/mission/today')
         time.sleep(1)
-        browser.find_element(By.XPATH,'//div[@class="modal-content b2-radius"]//span[@class="close-button"]').click()
-        time.sleep(1)
+        # browser.find_element(By.XPATH,'//div[@class="modal-content b2-radius"]//span[@class="close-button"]').click()
+        # time.sleep(1)
         browser.find_element(By.XPATH,'//button[@class="empty mobile-hidden"]').click()
         time.sleep(1)
         # 找到邮件和密码输入框的xpath,并在对应的位置送入账号密码
